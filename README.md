@@ -6,7 +6,7 @@ Build Your Own Backend
 
 | Api Paths             | Request       | Response  |
 | --------------------  |:-------------:| -----:|
-| '/'                   | right-aligned | $1600 |
-| '/:user/followers'    | centered      |   $12 |
-| '/:user/followers/:id'| are neat      |    $1 |
+| '/'                   | GET           |   pending |
+| '/:user/followers'    | pending       |   pending |
+| '/:user/followers/:id'| pending       |   pending |
 
