@@ -6,7 +6,7 @@ module.exports = {
     client: 'pg',
     connection: 'postgres://localhost/tweets',
     migrations: {
-      directory: './db/migrations'
+      directory: './migrations'
     },
     useNullAsDefault: true,
   },
