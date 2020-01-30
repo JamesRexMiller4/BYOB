@@ -45,6 +45,15 @@ app.get('/api/v1/users/:id', async (req, res) => {
   }
 })
 
+app.get('/api/v1/users/:id/tweets', async (req, res) => {
+  try {
+    const tweets = await database('tweets').select().where('user_id', req.params.id)
+    res.status(200).json(tweets)
+  } catch(error) {
+    res.status(500).json({ error })
+  }
+})
+
 app.post('/api/v1/users', bodyParser.json(), async (req, res) => {
   const user = req.body;
 
