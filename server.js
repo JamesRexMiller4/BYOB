@@ -18,6 +18,15 @@ app.get('/api/v1/tweets', async (req, res) => {
   }
 });
 
+app.get('/api/v1/tweets/:id', async (req, res) => {
+  try {
+    const user = await database('tweets').select().where('id', req.params.id)
+    res.status(200).json(user)
+  } catch(error) {
+    res.status(500).json({ error })
+  }
+})
+
 app.get('/api/v1/users', async (req, res) => {
   try {
     const users = await database('users').select();
