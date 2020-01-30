@@ -120,6 +120,10 @@ app.delete('/api/v1/users/:id/tweets/:tweet_id', async (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.send('You have come to the right place');
+});
+
 app.get('*', (req, res) => {
   res
     .status(404)

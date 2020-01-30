@@ -7,5 +7,5 @@ module.exports = {
       directory: './platform/db/migrations',
     },
     useNullAsDefault: true,
-  }
-}
+  },
+};
