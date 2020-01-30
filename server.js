@@ -189,6 +189,13 @@ app.delete('/api/v1/users/:id/tweets/:tweet_id', async (req, res) => {
   }
 });
 
+app.get('*', (req, res) => {
+// route handler for ALL other routes
+  res
+  .status(404)
+  .send('404: Not found')
+  // returns status code 404, indicating resource was not found and renders a message of '404: Not found' in browser
+});
 
 app.listen(app.get('port'), () => {
   // invokes event listener on the port this server is running from
