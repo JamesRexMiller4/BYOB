@@ -103,7 +103,7 @@ app.post('/api/v1/tweets', bodyParser.json(), async (req, res) => {
 app.delete('/api/v1/users/:id', async (req, res) => {
   try {
     await database('users').select().where('id', req.params.id).del()
-    res.status(200).send('Account has been deleted')
+    res.status(204).send('Account has been deleted')
   } catch(error) {
     res.status(500).json({ error })
   }
@@ -112,7 +112,7 @@ app.delete('/api/v1/users/:id', async (req, res) => {
 app.delete('/api/v1/users/:id/tweets/:tweet_id', async (req, res) => {
   try {
     await database('tweets').select().where('id', req.params.tweet_id).del()
-    res.status(200).json('Tweet has been deleted')
+    res.status(204).send('Tweet has been deleted')
   } catch(error) {
     res.status(500).json({ error })
   }
