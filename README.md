@@ -19,4 +19,4 @@ Build Your Own Backend
 ## Overview 
 
 
-(Sprint Board (GithubProjects))[https://github.com/JamesRexMiller4/BYOB/projects/1]
+[Sprint Board (GithubProjects)](https://github.com/JamesRexMiller4/BYOB/projects/1)
