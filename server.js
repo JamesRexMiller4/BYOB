@@ -48,29 +48,30 @@ app.post('/api/v1/users', bodyParser.json(), async (req, res) => {
   }
 });
 
-// app.post('/api/v1/tweets', async (req, res) => {
-//   console.log(req.body)
-//   console.log(req)
-//   const tweet = req.body;
-//   console.log(user)
+app.post('/api/v1/tweets', bodyParser.json(), async (req, res) => {
+  const tweet = req.body;
 
-//   for (let requiredParameter of ['content', 'date', 'id']) {
-//     if (!user[requiredParameter]) {
-//       return res
-//         .status(422)
-//         .send({ error: `Expected format: { content: <String>, date: <String> }. You're missing a ${requiredParameter} property`});
-//     }
-//   }
+  for (let requiredParameter of ['content', 'id']) {
+    if (!tweet[requiredParameter]) {
+      return res
+        .status(422)
+        .send({ error: `Expected format: { content: <String>, date: <String> }. You're missing a ${requiredParameter} property`});
+    }
+  }
 
-//   try {
-//     const id = await database('tweets').insert(tweet, 'id');
-//     res.status(201).json({ id })
-//   } 
+  try {
+    await database('tweets').insert({
+      content: tweet.content,
+      date: new Date(),
+      user_id: tweet.id
+    });
+    res.status(201).json({ tweet })
+  } 
   
-//   catch(error) {
-//     res.status(500).json({ error });
-//   }
-// });
+  catch(error) {
+    res.status(500).json({ error });
+  }
+});
 
 
 app.listen(app.get('port'), () => {
