@@ -1,9 +1,9 @@
-const data = [
+const twitterData = [
   {
     username: 'Meow Wolf',
     handle: "MeowWolf",
     followers: 22300,
-    following: 1,160,
+    following: 1160,
     tweets: [
       {
         content: '#MeowWolfSantaFe’s House of Eternal Return is a mind-bending, explorable art experience for people of all ages.',
@@ -422,7 +422,7 @@ const data = [
   {
     username: 'Stephanie Ruhle',
     handle: 'SRuhle', 
-    followers: 457,500,
+    followers: 457500,
     following: 1298,
     tweets: [
       {
@@ -840,3 +840,5 @@ const data = [
     ]
   }
 ]
+
+module.exports = twitterData;

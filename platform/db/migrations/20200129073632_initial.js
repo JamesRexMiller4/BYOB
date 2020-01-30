@@ -20,6 +20,6 @@ exports.up = function(knex) {
 
 exports.down = function(knex) {
   return knex.schema
-    .dropTable('footnotes')
-    .dropTable('papers')
+    .dropTable('tweets')
+    .dropTable('users')
 };

@@ -6,7 +6,10 @@ module.exports = {
     client: 'pg',
     connection: 'postgres://localhost/tweets',
     migrations: {
-      directory: './migrations'
+      directory: './db/migrations'
+    },
+    seeds: {
+      directory:'./db/seeds/'
     },
     useNullAsDefault: true,
   },
