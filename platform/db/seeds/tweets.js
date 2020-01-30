@@ -6,19 +6,19 @@ const createUser = async(knex, {username, handle, tweets}) => {
     handle,
   }, 'id')
 
-  let tweetsPromises = tweets.map(({content, date}) => {
-    return createTweet(knex, {
-      content,
-      date,
-      user_id: userId[0]
-    })
+  let tweetsPromises = await tweets.map(tweet => {
+    return createTweet(knex, tweet, userId)
   });
 
   return Promise.all(tweetsPromises);
 };
 
-const createTweet = (knex, data) => {
-  return knex('tweets').insert(data);
+const createTweet = (knex, tweet, id) => {
+  return knex('tweets').insert({
+    content: tweet.content,
+    date: tweet.date,
+    user_id: id[0]
+  });
 };
 
 exports.seed = async knex => {
