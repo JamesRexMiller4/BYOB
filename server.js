@@ -118,6 +118,12 @@ app.delete('/api/v1/users/:id/tweets/:tweet_id', async (req, res) => {
   }
 });
 
+app.get('*', (req, res) => {
+  res
+  .status(404)
+  .send('404: Not found')
+});
+
 
 app.listen(app.get('port'), () => {
   console.log(`Server is listening on localhost:${app.get('port')}...`)
