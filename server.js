@@ -100,6 +100,15 @@ app.post('/api/v1/tweets', bodyParser.json(), async (req, res) => {
   }
 });
 
+app.delete('/api/v1/users/:id', async (req, res) => {
+  try {
+    await database('users').select().where('id', req.params.id).del()
+    res.status(200).send('Account has been deleted')
+  } catch(error) {
+    res.status(500).json({ error })
+  }
+});
+
 
 app.listen(app.get('port'), () => {
   console.log(`Server is listening on localhost:${app.get('port')}...`)
