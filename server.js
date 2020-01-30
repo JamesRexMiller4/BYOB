@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const app = express();
 const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./platform/knexfile')[environment];
@@ -26,6 +26,15 @@ app.get('/api/v1/users', async (req, res) => {
     res.status(500).json({ error });
   }
 });
+
+app.get('/api/v1/users/:id', async (req, res) => {
+  try {
+    const user = await database('users').select().where('id', req.params.id)
+    res.status(200).json(user)
+  } catch(error) {
+    res.status(500).json({ error })
+  }
+})
 
 app.post('/api/v1/users', bodyParser.json(), async (req, res) => {
   const user = req.body;
