@@ -121,7 +121,7 @@ app.delete('/api/v1/users/:id/tweets/:tweet_id', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('You have come to the right place');
+  res.status(200).send('You have come to the right place');
 });
 
 app.get('*', (req, res) => {
@@ -131,7 +131,9 @@ app.get('*', (req, res) => {
 });
 
 
-app.listen(app.get('port'), () => {
-  // eslint-disable-next-line no-console
-  console.log(`Server is listening on localhost:${app.get('port')}...`);
-});
+// app.listen(app.get('port'), () => {
+//   // eslint-disable-next-line no-console
+//   console.log(`Server is listening on localhost:${app.get('port')}...`);
+// });
+
+export default app;

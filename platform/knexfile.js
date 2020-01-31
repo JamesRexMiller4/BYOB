@@ -13,6 +13,17 @@ module.exports = {
     },
     useNullAsDefault: true,
   },
+  test: {
+    client: 'pg',
+    connection: 'postgres://localhost/tweets_test',
+    migrations: {
+      directory: './platform/db/migrations',
+    },
+    seeds: {
+      directory: './platform/db/seeds/test',
+    },
+    useNullAsDefault: true,
+  },
   production: {
     client: 'pg',
     connection: process.env.DATABASE_URL + `?ssl=true`,
