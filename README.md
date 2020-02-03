@@ -18,6 +18,6 @@ Build Your Own Backend
 
 ## Overview 
 
-The BYOB (Build Your Own Backend) project objective was to get acquainted with route handling and database modeling. The server was built using Node.js with an Express framework, with a PostgreSQL relational database. Knex library is used to permit for querying SQL-like syntax in javascript and to assist with model, migrations, and seeding test data. The data constructed was taken from Twitter and features 30 different users each with 5 tweets per user, in a one to many relationship structure. The API documentation above designates what endpoints a user should make requests to in order to retreive or post new resources. The production deployment can be found on Heroku at https://powerful-eyrie-57154.herokuapp.com/
+The BYOB (Build Your Own Backend) project objective was to get acquainted with route handling and database modeling. The server was built using Node.js with an Express framework, and a PostgreSQL relational database. Knex library is used to permit for querying SQL-like syntax in javascript and to assist with model, migrations, and seeding test data. The data constructed was taken from Twitter and features 30 different users each with 5 tweets per user, in a one to many relationship structure. The API documentation above designates what endpoints a user should make requests to in order to retreive or post new resources. The production deployment can be found on Heroku at https://powerful-eyrie-57154.herokuapp.com/
 
 [Sprint Board (GithubProjects)](https://github.com/JamesRexMiller4/BYOB/projects/1)
